@@ -1,0 +1,22 @@
+<!--pages/player/player.wxml-->
+
+<view class="player-container">
+  <view class="player-bkg" style="background:url({{picUrl}}) no-repeat center/cover"></view>
+  <view class="player-mask"></view>
+</view>
+
+<view class="player-info">
+  <view class="player-disc {{isPlaying ? 'play': ''}}">
+    <image class="player-disc_img rotation {{isPlaying ? '' : 'rotation-paused'}}" src="{{picUrl}}"></image>
+  </view>
+
+  <view class="player-progress">
+    <bee-progress-bar></bee-progress-bar>
+  </view>
+
+  <view class="player-control">
+    <text class="iconfont icon-shangyishou" bind:tap="onPrev"></text>
+    <text class="iconfont {{isPlaying ? 'icon-zanting' : 'icon-bofang'}}" bind:tap="togglePlaying"></text>
+    <text class="iconfont icon-xiayishou" bind:tap="onNext"></text>
+  </view>
+</view>

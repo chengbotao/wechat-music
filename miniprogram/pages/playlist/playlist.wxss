@@ -1,0 +1,58 @@
+/* pages/playlist/playlist.wxss */
+
+.playlist-container {
+  position: relative;
+  height: 320rpx;
+}
+
+.playlist-bkg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* 滤镜 */
+  filter: blur(40rpx);
+  opacity: 0.4;
+}
+
+.playlist-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: #333333;
+}
+
+.playlist-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.playlist-info_img {
+  width: 280rpx;
+  height: 100%;
+  margin-right: 24rpx;
+  border-radius: 6rpx;
+}
+
+.playlist-info_desc{
+  flex: 1;
+  width: 0;
+  line-height: 60rpx;
+}
+
+.playlist-info_desc .playlist-info_desc_nm {
+  font-size: 36rpx;
+  color: #ffffff;
+  font-weight: 400;
+}

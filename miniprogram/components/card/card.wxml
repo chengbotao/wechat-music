@@ -1,0 +1,7 @@
+<!--components/card/card.wxml-->
+
+<view class="card-container">
+  <image src="{{data.picUrl}}" class="card-img" bind:tap="goToPlayList"></image>
+  <text class="card-count">{{_count}}</text>
+  <view class="card-name">{{data.name}}</view>
+</view>

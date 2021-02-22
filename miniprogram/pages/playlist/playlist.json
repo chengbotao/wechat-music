@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "bee-playlist": "/components/playlist/playlist"
+  }
+}

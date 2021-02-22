@@ -1,0 +1,14 @@
+<!--pages/music/music.wxml-->
+<swiper indicator-dots="true" autoplay="true" circular="true" interval="2000" duration="1000">
+  <block wx:for="{{swiperImgs}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item.url}}" mode="widthFix" class="swiper-img"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="music-container">
+  <block wx:for="{{songsList}}" wx:key="_id">
+    <bee-card data="{{item}}"></bee-card>
+  </block>
+</view>

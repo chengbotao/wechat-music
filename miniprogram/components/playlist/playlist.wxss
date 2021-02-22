@@ -1,0 +1,45 @@
+/* components/playlist/playlist.wxss */
+
+.list-container {
+  display: flex;
+  align-items: center;
+  padding: 14rpx 20rpx;
+}
+
+.list-idx {
+  color: #888888;
+  font-size: 34rpx;
+  width: 80rpx;
+}
+
+.list-info {
+  flex: 1;
+  /* width 等于 0, 防止内容长度 flex 1 不生效  */
+  width: 0;
+}
+
+.list-info_nm {
+  font-size: 34rpx;
+  line-height: 34rpx;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 文本不换行 */
+  white-space: nowrap;
+  padding: 10rpx 0;
+}
+
+.list-info_aila {
+  color: #888888;
+}
+
+.list-info_singer {
+  font-size: 24rpx;
+  color: #888888;
+}
+
+.playing .list-idx,
+.playing .list-info .list-info_nm,
+.playing .list-info .list-info_singer {
+  color: #d43c33;
+}

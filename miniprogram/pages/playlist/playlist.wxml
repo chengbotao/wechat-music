@@ -1,0 +1,14 @@
+<!--pages/playlist/playlist.wxml-->
+<view class="playlist-container">
+  <view class="playlist-bkg" style="background:url({{listInfo.coverImgUrl}}) no-repeat top/cover;"></view>
+  <view class="playlist-mask"></view>
+  <view class="playlist-info">
+    <image class="playlist-info_img" src="{{listInfo.coverImgUrl}}"></image>
+    <view class="playlist-info_desc">
+      <view class="playlist-info_desc_nm">{{listInfo.name}}</view>
+    </view>
+  </view>
+</view>
+<view>
+  <bee-playlist playlist="{{playList}}"></bee-playlist>
+</view>
