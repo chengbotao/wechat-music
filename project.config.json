@@ -40,6 +40,7 @@
   "appid": "wx0e0ad81846225098",
   "projectname": "bee-music",
   "libVersion": "2.14.1",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []

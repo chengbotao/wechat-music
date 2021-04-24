@@ -23,6 +23,18 @@
           "pathName": "pages/playlist/playlist",
           "query": "songListId=2128560894",
           "scene": null
+        },
+        {
+          "name": "pages/discover/discover",
+          "pathName": "pages/discover/discover",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/discover-edit/discover-edit",
+          "pathName": "pages/discover-edit/discover-edit",
+          "query": "nickName=\"微信用户\"&avatarUrl=\"https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4…cVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132\"",
+          "scene": null
         }
       ]
     }

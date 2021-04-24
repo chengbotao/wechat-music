@@ -1,0 +1,18 @@
+<!--pages/discover-comment/discover-comment.wxml-->
+<scroll-view scroll-y="true">
+  <view>
+    <bee-blog-card blog="{{blog}}"></bee-blog-card>
+  </view>
+  <view class="tab">
+    <view class="tab-item">评论列表</view>
+  </view>
+
+  <view class="comment-list">
+    <block wx:for="{{commentList}}" wx:key="_id">
+
+    </block>
+  </view>
+  <view>
+    <bee-blog-ctrl blogId="{{blog._id}}" bind:refreshCommentList="refreshCommentList"></bee-blog-ctrl>
+  </view>
+</scroll-view>

@@ -1,0 +1,6 @@
+<!--components/authorize/authorize.wxml-->
+<bee-modal modalShow="{{modalShow}}">
+  <view slot="modal-content">
+    <button class="authorize" open-type="getUserInfo" bindgetUserInfo="getUserInfo">获取微信授权信息</button>
+  </view>
+</bee-modal>

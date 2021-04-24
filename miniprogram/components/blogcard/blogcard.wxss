@@ -1,0 +1,16 @@
+/* components/blogcard/blogcard.wxss */
+.blog {
+  padding: 20rpx;
+  background: #ffffff;
+}
+
+.blog-title {
+  display: flex;
+}
+
+.blog-portrait {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}

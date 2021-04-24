@@ -1,2 +1,25 @@
 <!--pages/discover/discover.wxml-->
-<text>pages/discover/discover.wxml</text>
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="publish-container" bind:tap="onPublish">
+      <i class="iconfont icon-fabu"></i>
+    </view>
+    <view class="search-container">
+      <bee-search iconfont="iconfont" icon-sousuo="icon-sousuo" bind:search="onSearch"></bee-search>
+    </view>
+  </view>
+  <!-- 博客卡片列表 -->
+  <view class="blog-list">
+    <block wx:for="{{blogList}}" wx:key="_id">
+      <view class="blog-panel">
+        <bee-blog-card content="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment"></bee-blog-card>
+        <bee-blog-ctrl blogId="{{item._id}}"></bee-blog-ctrl>
+      </view>
+    </block>
+  </view>
+  <!-- 底部弹窗 -->
+  <!-- 授权 -->
+  <bee-authorize modalShow="{{modalShow}}" bind:authorizeSucc="authorizeSucc" bind:authorizeFail="authorizeFail">
+  </bee-authorize>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "bee-blog-card": "/components/blogcard/blogcard",
+    "bee-blog-ctrl": "/components/blogctrl/blogctrl"
+  },
+  "navigationBarTitleText": "正文"
+}

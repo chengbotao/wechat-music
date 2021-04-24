@@ -1,0 +1,8 @@
+/* components/authorize/authorize.wxss */
+.authorize {
+  font-size: 32rpx;
+  height: 80rpx;
+  background-color: #d43c33;
+  color: #fff;
+  margin: 110rpx;
+}

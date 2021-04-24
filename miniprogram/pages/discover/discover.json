@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "bee-search": "/components/search/search",
+    "bee-authorize": "/components/authorize/authorize",
+    "bee-blog-card": "/components/blogcard/blogcard",
+    "bee-blog-ctrl": "/components/blogctrl/blogctrl"
+  },
+  "navigationBarTitleText": "发现",
+  "enablePullDownRefresh": true
 }

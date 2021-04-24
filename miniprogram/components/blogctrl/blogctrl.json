@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bee-authorize": "/components/authorize/authorize",
+    "bee-modal": "/components/modal/modal"
+  }
+}

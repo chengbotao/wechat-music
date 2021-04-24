@@ -4,7 +4,9 @@
     "pages/discover/discover",
     "pages/profile/profile",
     "pages/playlist/playlist",
-    "pages/player/player"
+    "pages/player/player",
+    "pages/discover-edit/discover-edit",
+    "pages/discover-comment/discover-comment"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
