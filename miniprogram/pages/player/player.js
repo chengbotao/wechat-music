@@ -6,7 +6,7 @@ const backgroundAudioManager = wx.getBackgroundAudioManager()
 // 歌曲列表 & 当前播放的index
 let playList = []
 let nowPlayingIdx = 0
-
+const app =getApp()
 Page({
 
   /**
@@ -49,6 +49,7 @@ Page({
       let songDetail = res.result.body.data
       backgroundAudioManager.src = songDetail[0].url
       backgroundAudioManager.title = song.name
+      this.savePlayHistory()
       this.setData({
         isPlaying: true
       })
@@ -91,6 +92,17 @@ Page({
     this._loadMusicDetail()
   },
 
+  savePlayHistory() {
+    const music = playList[nowPlayingIdx]
+    const openid = app.globalData.openid
+    const history = wx.getStorageSync(openid)
+    let result = history.some(item => item.id === music.id)
+    console.log(result);
+    if (!result) {
+      history.unshift(music)
+      wx.setStorageSync(openid, history)
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

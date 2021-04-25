@@ -6,7 +6,9 @@
     "pages/playlist/playlist",
     "pages/player/player",
     "pages/discover-edit/discover-edit",
-    "pages/discover-comment/discover-comment"
+    "pages/discover-comment/discover-comment",
+    "pages/profile-playhistory/profile-playhistory",
+    "pages/blog-bloghistory/blog-bloghistory"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

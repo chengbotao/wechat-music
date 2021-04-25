@@ -1,56 +1,48 @@
-// pages/discover-comment/discover-comment.js
-import formatDate from "../../utils/formatDate"
+// pages/blog-bloghistory/blog-bloghistory.js
+const MAX_LIMI = 100
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    blog: {},
-    commentList: [],
-    blogId: ""
+    blogList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
-    this.setData({
-      blogId: options.blogId
-    })
-    this._getBlogDetail(options.blogId)
+    this._getListByCloudFn()
   },
-  _getBlogDetail() {
-    wx.showLoading({
-      title: '加载中...',
-      mask: true
-    })
 
+  _getListByCloudFn() {
+    wx.showLoading({
+      title: "加载中"
+    })
     wx.cloud.callFunction({
       name: "discover",
       data: {
-        blogId: this.data.blogId,
-        $url: "detail",
+        $url: "getListByOpenid",
+        start: this.data.blogList.length,
+        count: MAX_LIMI
       }
     }).then(res => {
-      let commentList = res.result.commentList.data
-      for (let i = 0; i < commentList.length; i++) {
-        commentList[i].createTime = formatDate(new Date(commentList[i].createTime))
-      }
       console.log(res);
       this.setData({
-        commentList,
-        blog: res.result.detail[0],
+        blogList: this.data.blogList.concat(res.result)
       })
       wx.hideLoading({
         success: (res) => { },
       })
     })
   },
-  refreshCommentList() {
-    this._getBlogDetail()
+  goComment(event) {
+    wx.navigateTo({
+      url: `../discover-comment/discover-comment?blogId=${event.target.dataset.blogid}`,
+    })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -90,14 +82,14 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this._getListByCloudFn()
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    let blog = this.data.blog
+  onShareAppMessage: function (event) {
+    let blog = event.target.dataset.blog
     return {
       title:blog.content,
       path: `/pages/discover-comment/discover-comment?blogId=${blog._id}`,

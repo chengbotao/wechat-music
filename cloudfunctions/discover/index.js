@@ -55,18 +55,25 @@ exports.main = async (event, context) => {
       }
       if (tasks.length > 0) {
         commentList = (await Promise.all(tasks)).reduce((acc, cur) => {
-          console.log(acc,cur);
+          console.log(acc, cur);
           return {
             data: acc.data.concat(cur.data)
           }
         })
       }
     }
-
     ctx.body = {
       commentList,
       detail
     }
+  })
+  const wxContext = cloud.getWXContext()
+  app.router("getListByOpenid", async (ctx, next) => {
+    ctx.body = await musicBlogCollection.where({
+      _openid: wxContext.OPENID
+    }).skip(event.start).limit(event.count).orderBy("createTime", "desc").get().then(res => {
+      return res.data
+    })
   })
   return app.serve()
 }

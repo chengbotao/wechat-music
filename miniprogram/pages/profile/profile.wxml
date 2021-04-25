@@ -1,2 +1,31 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view>
+  <view>
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName"></open-data>
+</view>
+
+<view>
+  <view>
+    <navigator hover-class="none" url="/pages/profile-playhistory/profile-playhistory">
+      <i></i>
+      <text>最近播放</text>
+      <i></i>
+    </navigator>
+  </view>
+  <view>
+    <navigator hover-class="none" url="/pages/blog-bloghistory/blog-bloghistory">
+      <i></i>
+      <text>我的发现</text>
+      <i></i>
+    </navigator>
+  </view>
+  <view>
+    <view bind:tap="onTapQrCode">
+      <i></i>
+      <text>生成小程序码</text>
+      <i></i>
+    </view>
+  </view>
+</view>

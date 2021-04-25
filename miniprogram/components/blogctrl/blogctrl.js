@@ -8,6 +8,9 @@ Component({
   properties: {
     blogId: {
       type: String
+    },
+    blog: {
+      type: Object
     }
   },
   options: {

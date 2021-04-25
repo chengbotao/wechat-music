@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bee-playlist": "/components/playlist/playlist"
+  },
+  "navigationBarTitleText": "最近播放"
+}

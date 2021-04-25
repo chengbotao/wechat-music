@@ -1,0 +1,2 @@
+<!--pages/profile-playhistory/profile-playhistory.wxml-->
+<bee-playlist playlist="{{musicList}}"></bee-playlist>

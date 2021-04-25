@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "bee-progress-bar": "/components/progress-bar/progress-bar"
-  }
+  },
+  "disableScroll": true
 }
